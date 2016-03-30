@@ -45,5 +45,34 @@ function luiz_ogfacebook_tags() {
   }
 }
 
+add_action('admin_menu', 'luiz_plugin_menu');
+
+function luiz_plugin_menu() {
+    add_submenu_page('options-general.php',
+      'P&aacute;gina de Configuração do Plugin do Luiz',
+      'Configura&ccedil;&atilde;o do Plugin do Luiz', 
+      'administrator', 
+      'luiz-plugin-settings', 
+      'luiz_plugin_settings_page');
+}
+
+function luiz_plugin_settings_page() {        
+
+} 
+
+add_action( 'admin_init','luiz_plugin_settings' );
+
+function luiz_plugin_settings() {
+  register_setting( 'luiz-plugin-settings-group', 
+			'nome_funcionario' );
+  register_setting( 'luiz-plugin-settings-group', 
+			'telefone_funcionario' );
+  register_setting( 'luiz-plugin-settings-group', 
+			'email_funcionario' );
+}
+
+
+
+
 
 ?>
