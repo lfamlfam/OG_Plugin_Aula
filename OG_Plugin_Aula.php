@@ -57,7 +57,7 @@ function luiz_plugin_menu() {
 }
 
 function luiz_plugin_settings_page() {        
-
+  include('templates/og_config_tpl.php');
 } 
 
 add_action( 'admin_init','luiz_plugin_settings' );
@@ -70,9 +70,5 @@ function luiz_plugin_settings() {
   register_setting( 'luiz-plugin-settings-group', 
 			'email_funcionario' );
 }
-
-
-
-
 
 ?>
