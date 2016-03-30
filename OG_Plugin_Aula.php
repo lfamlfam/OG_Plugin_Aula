@@ -37,4 +37,13 @@ function luiz_altera_erro_login() {
 } 
 */
 
+add_action( 'wp_head', 'luiz_ogfacebook_tags' );
+
+function luiz_ogfacebook_tags() { 
+  if( is_single() ) {//Só aparece se for uma página com apenas um post
+	include('templates/og_tpl.php');
+  }
+}
+
+
 ?>
